@@ -1,0 +1,6 @@
+{
+  "op": "insert_after",
+  "path": "SKILL.md",
+  "anchor": "- Do not include unrelated background.",
+  "text": "\n## Known failure modes\n\n- Skipping the self-check when the answer feels obvious — always emit the self-check line.\n- Letting the step list grow past three when the task has sub-parts — merge or drop steps."
+}

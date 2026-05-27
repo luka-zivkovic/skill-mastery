@@ -1,0 +1,3 @@
+display_name: Toy Skill
+short_description: Demonstrates concise decomposition and validation.
+default_prompt: Use the toy skill to break a small request into steps, answer briefly, and self-check.

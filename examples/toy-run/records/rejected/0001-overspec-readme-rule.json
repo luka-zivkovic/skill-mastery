@@ -1,0 +1,11 @@
+{
+  "op": "insert_after",
+  "path": "SKILL.md",
+  "anchor": "4. Add a one-sentence self-check that confirms the answer matches the objective.",
+  "text": "\n5. For README verification tasks, check that the file has a Title, Install, and Usage section in that order.",
+  "_rejection": {
+    "reason": "Over-specified: hardcodes one task type (README verification) into a general task-decomposition skill. Violates 'generalize, don't hardcode'. Surfaced by val-001 only; no support across the minibatch.",
+    "date": "2026-06-01",
+    "do_not_repropose_this_epoch": true
+  }
+}

@@ -1,0 +1,143 @@
+id: toy-skill-evals
+skill: toy-skill
+source:
+  path: "examples/toy-skill"
+  hash: "none"
+deployed:
+  path: "none"
+  hash: "none"
+verifiability: rubric
+scoring:
+  scale: 0-1
+  grading_runs: 3
+  accept_rule: new_must_win_majority_pairwise_no_regression
+rubric:
+  criteria:
+    - "Restates the objective in exactly one sentence."
+    - "Uses no more than three steps."
+    - "Ends with a one-sentence self-check tied to the objective."
+    - "Includes no unrelated background."
+splits:
+  train:
+    - id: train-001
+      prompt: "Use toy-skill to explain how to rename a local file safely."
+      success_criteria:
+        - "Restates the objective."
+        - "Uses no more than three steps."
+        - "Includes a self-check."
+    - id: train-002
+      prompt: "Use toy-skill to explain how to stage and commit one file in git."
+      success_criteria:
+        - "Restates the objective."
+        - "Uses no more than three steps."
+        - "Includes a self-check."
+    - id: train-003
+      prompt: "Use toy-skill to explain how to create a Python virtual environment."
+      success_criteria:
+        - "Restates the objective."
+        - "Uses no more than three steps."
+        - "Includes a self-check."
+    - id: train-004
+      prompt: "Use toy-skill to explain how to find a string in files under a directory."
+      success_criteria:
+        - "Restates the objective."
+        - "Uses no more than three steps."
+        - "Includes a self-check."
+  validation:
+    - id: val-001
+      prompt: "Use toy-skill to summarize how to verify a generated README."
+      success_criteria:
+        - "Gives a concise step list."
+        - "Answers the request directly."
+        - "Includes a self-check."
+    - id: val-002
+      prompt: "Use toy-skill to summarize how to roll back the last git commit locally."
+      success_criteria:
+        - "Concise step list."
+        - "Direct answer."
+        - "Includes a self-check."
+    - id: val-003
+      prompt: "Use toy-skill to summarize how to check which process holds a port."
+      success_criteria:
+        - "Concise step list."
+        - "Direct answer."
+        - "Includes a self-check."
+    - id: val-004
+      prompt: "Use toy-skill to summarize how to compress a folder into a tarball."
+      success_criteria:
+        - "Concise step list."
+        - "Direct answer."
+        - "Includes a self-check."
+    - id: val-005
+      prompt: "Use toy-skill to summarize how to tail and follow a log file."
+      success_criteria:
+        - "Concise step list."
+        - "Direct answer."
+        - "Includes a self-check."
+    - id: val-006
+      prompt: "Use toy-skill to summarize how to set an environment variable for one command."
+      success_criteria:
+        - "Concise step list."
+        - "Direct answer."
+        - "Includes a self-check."
+    - id: val-007
+      prompt: "Use toy-skill to summarize how to count lines in a file."
+      success_criteria:
+        - "Concise step list."
+        - "Direct answer."
+        - "Includes a self-check."
+    - id: val-008
+      prompt: "Use toy-skill to summarize how to make a shell script executable."
+      success_criteria:
+        - "Concise step list."
+        - "Direct answer."
+        - "Includes a self-check."
+  test:
+    - id: test-001
+      prompt: "Use toy-skill to describe how to back up a notes folder."
+      success_criteria:
+        - "Avoids unrelated background."
+        - "Uses no more than three steps."
+        - "Includes a direct self-check."
+    - id: test-002
+      prompt: "Use toy-skill to describe how to delete a remote git branch."
+      success_criteria:
+        - "Avoids unrelated background."
+        - "Uses no more than three steps."
+        - "Includes a direct self-check."
+    - id: test-003
+      prompt: "Use toy-skill to describe how to check disk usage of a directory."
+      success_criteria:
+        - "Avoids unrelated background."
+        - "Uses no more than three steps."
+        - "Includes a direct self-check."
+    - id: test-004
+      prompt: "Use toy-skill to describe how to copy a file to a remote host."
+      success_criteria:
+        - "Avoids unrelated background."
+        - "Uses no more than three steps."
+        - "Includes a direct self-check."
+    - id: test-005
+      prompt: "Use toy-skill to describe how to list the largest files in a tree."
+      success_criteria:
+        - "Avoids unrelated background."
+        - "Uses no more than three steps."
+        - "Includes a direct self-check."
+    - id: test-006
+      prompt: "Use toy-skill to describe how to redirect command output to a file."
+      success_criteria:
+        - "Avoids unrelated background."
+        - "Uses no more than three steps."
+        - "Includes a direct self-check."
+    - id: test-007
+      prompt: "Use toy-skill to describe how to check the current git branch."
+      success_criteria:
+        - "Avoids unrelated background."
+        - "Uses no more than three steps."
+        - "Includes a direct self-check."
+    - id: test-008
+      prompt: "Use toy-skill to describe how to kill a process by PID."
+      success_criteria:
+        - "Avoids unrelated background."
+        - "Uses no more than three steps."
+        - "Includes a direct self-check."

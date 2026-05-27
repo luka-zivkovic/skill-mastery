@@ -1,0 +1,57 @@
+id: example-skill-evals
+skill: example-skill
+
+# Where the canonical (deployed) skill lives, and its content hash at the time
+# this manifest was last synced. scripts/sync_skill.py refuses to start a loop
+# when the local workshop copy drifts from this hash. Use "none" for a brand-new
+# skill that has not been deployed yet.
+source:
+  path: "none"
+  hash: "none"
+deployed:
+  path: "none"
+  hash: "none"
+
+# verifiability tier drives how strict the acceptance gate is:
+#   objective  -> a script/test/exact-match decides pass/fail; full SkillOpt gate.
+#   rubric     -> blind pairwise judge (different model if possible) on a fixed rubric.
+#   subjective -> no scored gate possible; qualitative review only (lite path).
+verifiability: rubric
+
+scoring:
+  scale: 0-1
+  # Number of independent grading runs per task (anti-noise). Accept only if the
+  # mean improves AND no single run regresses. Min 3 for objective/rubric.
+  grading_runs: 3
+  # Accept rule MUST match the tier:
+  #   objective  -> validation_score_must_strictly_improve
+  #   rubric     -> new_must_win_majority_pairwise_no_regression
+  #   subjective -> no_scored_gate
+  accept_rule: new_must_win_majority_pairwise_no_regression
+
+# Rubric used by the blind pairwise judge (required for the rubric tier; omit for
+# objective/subjective). Keep criteria observable, not vibes.
+rubric:
+  criteria:
+    - "Replace with an observable, checkable quality (e.g. 'cites the exact source line')."
+    - "Replace with a second observable criterion."
+
+# Minimum sizes are enforced by validate_eval_manifest.py to keep the gate out of
+# the noise floor: validation >= 8 and test >= 8 for objective/rubric tiers.
+splits:
+  train:
+    - id: train-001
+      prompt: "Replace with a representative user request."
+      success_criteria:
+        - "The answer follows the skill workflow."
+        - "The output satisfies the user request."
+  validation:
+    - id: val-001
+      prompt: "Replace with a held-out request used for accepting/rejecting patches."
+      success_criteria:
+        - "The behavior improves without introducing regressions."
+  test:
+    - id: test-001
+      prompt: "Replace with an unbiased periodic test request."
+      success_criteria:
+        - "The skill generalizes beyond train and validation examples."
