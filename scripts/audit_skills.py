@@ -31,7 +31,7 @@ SKIP_DIRS = {'.git', 'node_modules', '__pycache__', '.venv', 'venv', 'dist', 'bu
              '.skill-mastery'}
 
 # Heuristic section cues (lowercased heading text contains any token).
-FAILURE_CUES = ('failure', 'pitfall', 'gotcha', 'common mistake', 'anti-pattern')
+FAILURE_CUES = ('failure', 'pitfall', 'gotcha', 'common mistake', 'anti-pattern', 'guardrail')
 CONSTRAINT_CUES = ('output', 'constraint', 'format', 'must', 'rule')
 OBJECTIVE_CUES = re.compile(r"\b(test|exit code|exact|json|schema|compile|lint|typecheck|diff)\b", re.I)
 
@@ -143,7 +143,7 @@ def audit_one(skill_md: Path) -> dict:
 
     # 3. Known-failure-modes section.
     if not any(cue in heading_blob for cue in FAILURE_CUES):
-        findings.append(('WARN', 'no "known failure modes" section — the recurring mistakes the skill should prevent'))
+        findings.append(('WARN', 'no failure-modes/guardrails section — the recurring mistakes the skill should prevent'))
 
     # 4. Output constraints / rules section.
     if not any(cue in heading_blob for cue in CONSTRAINT_CUES):

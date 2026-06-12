@@ -1,0 +1,8 @@
+{
+  "skill": "capture-lesson",
+  "created_at": "2026-06-10T15:08:42.239615+00:00",
+  "before_included": true,
+  "after": "after.md",
+  "patch_included": false,
+  "eval_result_count": 0
+}

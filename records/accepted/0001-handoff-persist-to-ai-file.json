@@ -1,0 +1,32 @@
+[
+  {
+    "op": "replace",
+    "path": "SKILL.md",
+    "old": "off\", \"write a handoff\", \"summarize where we are\", or \"save context\". Produces\n  a handoff document (disable-model-invocation).",
+    "new": "off\", \"write a handoff\", \"summarize where we are\", or \"save context\". Produces\n  a handoff document in chat and persists it to .ai/handoff.md\n  (disable-model-invocation)."
+  },
+  {
+    "op": "insert_after",
+    "path": "SKILL.md",
+    "anchor": "6. Keep it scannable; omit conversational back-and-forth and anything re-derivable from the repo.",
+    "text": "7. Write the identical document to `.ai/handoff.md` (create `.ai/` if missing; overwrite the\n   prior handoff — history lives in git). Stamp line 1:\n   `_Saved: <date> · branch: <branch> · HEAD: <short-sha>_` so resume can drift-check."
+  },
+  {
+    "op": "replace",
+    "path": "SKILL.md",
+    "old": "`## Open threads` (next · blockers · dead ends) → `## Orient` (key files, commands, branch).",
+    "new": "`## Open threads` (next · blockers · dead ends) → `## Orient` (key files, commands, branch).\nWrite the same document to `.ai/handoff.md` with the `Saved` stamp as line 1; show it in chat as well."
+  },
+  {
+    "op": "insert_after",
+    "path": "SKILL.md",
+    "anchor": "- Keep it to roughly one screen; if it's longer, you're including chatter.",
+    "text": "- Overwrite `.ai/handoff.md`; never accumulate multiple handoffs — one current handoff per project."
+  },
+  {
+    "op": "insert_after",
+    "path": "SKILL.md",
+    "anchor": "- **Code paste.** Inlining large snippets. Rule: link files/commands; keep it a map.",
+    "text": "- **Chat-only handoff.** Emitted to chat but never persisted; the next session starts cold. Rule: always write `.ai/handoff.md`."
+  }
+]
