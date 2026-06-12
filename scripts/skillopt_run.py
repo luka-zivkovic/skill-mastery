@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""SkillOpt runner — the paper's loop, made runnable (you supply the verifier).
+"""DEPRECATED for real runs: prefer scripts/skillopt_bridge.py, which drives the
+maintained microsoft/SkillOpt package. This in-repo loop remains only as the
+dependency-free mock used by doctor.py / make check.
+
+SkillOpt runner — the paper's loop, made runnable (you supply the verifier).
 
 A frozen target model executes tasks with the current skill; an optimizer model turns
 the failures into BOUNDED edits; a held-out validation gate accepts only edits that

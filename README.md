@@ -1,6 +1,9 @@
 # Skill Mastery
 
-Skill QA and lifecycle tooling for Claude/Codex skills.
+The QA and governance layer for agent skills — optimizer-agnostic. When a real
+verifier exists, drive [microsoft/SkillOpt](https://github.com/microsoft/SkillOpt);
+the rest of the time, this is the audit / patch / release / CI discipline around
+your Claude and Codex skills.
 
 This repository provides small, dependency-free scripts for creating, auditing,
 validating, changing, and packaging agent skills. The goal is not to make skills
@@ -41,22 +44,28 @@ patches, history, release packages, and optional evaluation gates.
 ## Relationship to SkillOpt
 
 This repository was influenced by
-[SkillOpt: Executive Strategy for Self-Evolving Agent Skills](https://arxiv.org/abs/2605.23904).
-SkillOpt's useful contribution is the framing: a skill can be external state that
-is improved through repeated attempts, failure analysis, candidate edits,
-validation, rejected-edit memory, and snapshots.
+[SkillOpt: Executive Strategy for Self-Evolving Agent Skills](https://arxiv.org/abs/2605.23904)
+([code](https://github.com/microsoft/SkillOpt)). SkillOpt's useful contribution is
+the framing: a skill can be external state that is improved through repeated
+attempts, failure analysis, candidate edits, validation, rejected-edit memory,
+and snapshots. The paper reports large gains on verifier-backed benchmarks
+(around +19 to +25 points on GPT-5.5 depending on harness), and the repo now also
+ships SkillOpt-Sleep, a nightly consolidation companion with staged human review.
 
 The difference is the operating assumption.
 
-SkillOpt is primarily an optimization loop. It works best when there is a task
-distribution and an automatic verifier that can repeatedly score candidate skill
-versions. That is a reasonable benchmark setup, but it is not how many production
-skills behave. A skill for PR review, issue triage, bug reproduction, coding
-conventions, support workflows, or design review often has partial evidence,
-human judgment, mutable repositories, and side effects.
+SkillOpt is an optimizer. It works best when there is a task distribution and an
+automatic (or at least rubric-stable) verifier that can repeatedly score candidate
+skill versions. Many production skills are not like that: PR review, issue triage,
+bug reproduction, coding conventions, support workflows, and design review have
+partial evidence, human judgment, mutable repositories, and side effects — and a
+skill estate needs auditing, bounded review-able changes, release packaging, and
+CI gates regardless of whether any optimizer ever runs.
 
-Skill Mastery keeps the parts of the SkillOpt idea that are useful in real
-repositories, but puts a QA and lifecycle workflow first.
+Skill Mastery is that surrounding layer. Where a verifier genuinely exists, do not
+reimplement the optimizer — use the SkillOpt package as the engine (see
+`scripts/skillopt_bridge.py`) and keep this repo's evidence tiers, accept gates,
+and history as the governance around it.
 
 | Area | SkillOpt-style loop | Skill Mastery |
 |---|---|---|

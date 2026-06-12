@@ -37,7 +37,7 @@ No splits, no gate, no grading runs. This covers the large majority of real skil
 
 ## Why this matters
 
-The headline "+17.6 pts" is an `objective`-tier result. Quoting it for a `subjective`
+The headline gains (+19 to +25 pts on GPT-5.5, per the current paper) are `objective`-tier results. Quoting it for a `subjective`
 skill is cargo-culting. This repo's value in the common case is the **discipline**
 (bounded edits, snapshots, attribution, anti-noise guardrails), not a reproduction of the
 paper's optimizer.

@@ -5,7 +5,7 @@ This repo is **skill QA and lifecycle tooling** for Claude/Codex skills. It help
 ## What this repo is — and is not
 
 - It **is** skill QA and lifecycle tooling: guided audits, actionable triage, smoke-test scaffolding, bounded patches, accepted/rejected history, snapshots, release packages, and an optional SkillOpt-style scored loop for verifier-backed cases.
-- It is **not** a self-evolving-skills product or a reproduction of the paper's results. SkillOpt's "+17.6 pts" came from automatic objective verifiers over benchmark datasets we don't ship. Do not quote those numbers as outcomes of this repo, and do not call ordinary lite-path maintenance "optimization."
+- It is **not** a self-evolving-skills product or a reproduction of the paper's results. SkillOpt's reported gains (+19 to +25 pts on GPT-5.5, depending on harness) came from automatic verifiers over benchmark datasets we don't ship. Do not quote those numbers as outcomes of this repo, and do not call ordinary lite-path maintenance "optimization." When a scored loop is justified, prefer driving the official `microsoft/SkillOpt` package via `scripts/skillopt_bridge.py` over the legacy in-repo loop.
 
 ## Hard rules
 

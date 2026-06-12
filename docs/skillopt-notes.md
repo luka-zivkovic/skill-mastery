@@ -33,7 +33,7 @@ SkillOpt treats a skill as trainable external state. The base agent remains fixe
   scored rollouts, minibatch reflection, bounded edits, cosine edit-budget schedule,
   tiered held-out gate, score cache, rejected-edit buffer, slow/meta update, and
   `best_skill.md` export. The discipline around it (snapshots, attribution, audit) ships too.
-- **The paper's numbers stay out of reach:** the headline gains (avg +17.6 pts; ablating
+- **The paper's numbers stay out of reach:** the headline gains (+19 to +25 pts on GPT-5.5 per the current paper; ablating
   the slow-update region cost −22.5 pts on SpreadsheetBench) came from an **automatic
   objective verifier** over hundreds of held-out items. We supply the loop, not that
   verifier or those datasets — so scoring is yours, via verifiability **tiers**: a real

@@ -81,7 +81,7 @@ on the small splits we run. This is a deliberate, documented divergence from the
 
 ## What is NOT reproducible (read this)
 
-The headline results (avg +17.6 pts; −22.5 on a slow-update ablation) came from an
+The headline results (+19 to +25 pts on GPT-5.5 per the current paper; −22.5 on a slow-update ablation) came from an
 **automatic objective verifier** over benchmarks with crisp answers, run at scale. This
 repo supplies the *mechanism*, not those datasets or that verifier. On your own tasks:
 
